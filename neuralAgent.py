@@ -5,11 +5,8 @@ import tensorflow as tf
 from gameRules import *
 
 def calcValue(boards,model):
-    #tensorBoards=np.array(boards).reshape(-1,4,4,1)
     tensorBoards= np.array(boards).reshape((-1, 25))
-    #tensorBoards = tf.convert_to_tensor(tensorBoards,dtype=tf.int32)
     prediction=model.predict(tensorBoards)
-    #print(prediction)
     return prediction
 
 def neuralMove(model,board,player):

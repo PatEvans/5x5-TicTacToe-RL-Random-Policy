@@ -6,7 +6,7 @@ import copy
 def randomData(board):
     originalBoard=copy.deepcopy(board)
     games=[]
-    for i in range(1000):
+    for i in range(10000):
         games.append(randGame(board))
         board=copy.deepcopy(originalBoard)
     return games

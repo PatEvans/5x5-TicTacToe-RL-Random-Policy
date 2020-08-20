@@ -6,14 +6,13 @@ def randomTest(model,board):
     noughtWins=0
     draws=0
     originalBoard=copy.deepcopy(board)
-    for i in range(0,100):
+    for i in range(0,200):
         print(i)
         while (terminate(board)==-1):
             board=neuralMove(model,board,1)
             if(terminate(board)!=-1):
                 break
             board=randMove(board,2)
-            #print(board)
         printBoard(board)
 
         result=terminate(board)
@@ -34,10 +33,12 @@ def randomTest(model,board):
     crossWins=0
     noughtWins=0
     draws=0
-    for i in range(0,0):
+    for i in range(0,200):
 
         while (terminate(board)==-1):
             board=randMove(board,1)
+            if(terminate(board)!=-1):
+                break
             board=neuralMove(model,board,2)
         result=terminate(board)
         board=copy.deepcopy(originalBoard)
@@ -48,8 +49,8 @@ def randomTest(model,board):
         else:
             draws=draws+1
 
-    print("Model won: "+str(crossWins))
-    print("Model lost: "+str(noughtWins))
+    print("Model won: "+str(noughtsWins))
+    print("Model lost: "+str(crossWins))
     print("Model drew: "+str(draws))
 
     #test as noughts

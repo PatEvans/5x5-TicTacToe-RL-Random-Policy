@@ -12,14 +12,13 @@ option=input("Do you want to train a model or load a model? ( t / l )")
 if(option=="t"):
     #produce training data via random policy
     trainingData=randomData(board)
-    #print(trainingData)
     #and train neural model using the data produced
     neural.trainModel(trainingData)
-    neural.model.save('100000Random')
+    neural.model.save('RandomModel.h5')
 
 else:
     from tensorflow import keras
-    neural.model=keras.models.load_model('100000Random')
+    neural.model=keras.models.load_model('RandomModel.h5')
 
     print("Loaded!")
 #test the model
