@@ -17,3 +17,5 @@ Model lost: 71
 Model drew: 13
 
 Win Rate = 58%
+
+Run launch.py to start the program.
